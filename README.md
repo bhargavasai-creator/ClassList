@@ -1,40 +1,53 @@
-# ArrayList Example (Java)
+# Java Collections Examples (ListExample)
 
-A simple Java program demonstrating common `ArrayList<String>` operations, written for Boston University METCS622.
-
-## Description
-
-The program creates an `ArrayList` containing seven strings and then performs these operations:
-
-1. **Iterate** through the list and print every element (enhanced for-loop).
-2. **Search** for the position of `"BU"` using `indexOf()`.
-3. **Find indexes** of `"METCS622"` and `"test1"`.
-4. **Check membership** of `"test3"` using `contains()`.
-5. **Remove** `"foo"` and `"bar"` using `remove()`, then print the updated list.
+A small set of Java programs demonstrating basic collection operations, written for Boston University METCS622.
 
 ## Project Structure
 
 ```
 .
 └── ListExample/
-    └── ArrayListExample.java
+    ├── ArrayListExample.java
+    ├── QueueExample.java
+    └── GenericClass.java
 ```
 
 ## Requirements
 
 - Java JDK 8 or higher
 
+## Files
+
+### 1. `ArrayListExample.java`
+Demonstrates common `ArrayList<String>` operations:
+- Iterate and print all elements (enhanced for-loop)
+- Find the index of `"BU"`, `"METCS622"`, and `"test1"` with `indexOf()`
+- Check membership of `"test3"` with `contains()`
+- Remove `"foo"` and `"bar"` with `remove()`
+
+### 2. `QueueExample.java`
+Demonstrates the `Queue<String>` interface using a `LinkedList`:
+- Add `"x"`, `"y"`, `"z"` with `offer()`
+- Remove two elements from the head with `poll()` (FIFO order)
+- Print the queue before and after removal
+
+### 3. `GenericClass.java`
+An empty placeholder class with a default constructor. It has no `main` method and is not runnable on its own.
+
 ## How to Compile and Run
 
 From the project root (the folder containing `ListExample/`):
 
 ```bash
-javac ListExample/ArrayListExample.java
+javac ListExample/*.java
+
 java ListExample.ArrayListExample
+java ListExample.QueueExample
 ```
 
 ## Expected Output
 
+**ArrayListExample**
 ```
 List contents:
 foo
@@ -60,21 +73,128 @@ BU
 Boston University
 ```
 
-## Key Concepts Covered
+**QueueExample**
+```
+Queue after adding elements: [x, y, z]
+Queue after removing two elements: [z]
+```
 
-| Method | Purpose |
-|---|---|
-| `add(E e)` | Append an element |
-| `indexOf(Object o)` | Return index of first match, or `-1` if absent |
-| `contains(Object o)` | Return `true` if element exists |
-| `remove(Object o)` | Remove first matching element |
-| Enhanced `for` loop | Iterate over all elements |
+## Key Concepts
+
+| Method | Class/Interface | Purpose |
+|---|---|---|
+| `add(E e)` | `ArrayList` | Append an element |
+| `indexOf(Object o)` | `ArrayList` | Index of first match, or `-1` if absent |
+| `contains(Object o)` | `ArrayList` | `true` if element exists |
+| `remove(Object o)` | `ArrayList` | Remove first matching element |
+| `offer(E e)` | `Queue` | Insert at the tail |
+| `poll()` | `Queue` | Remove and return the head (`null` if empty) |
 
 ## Notes
 
-- `ArrayList` indexes start at **0**.
-- `indexOf()` returns `-1` when the element is not found.
-- `remove(Object)` shifts the remaining elements left, so indexes change after removal.
+- `ArrayList` indexes start at **0**; after a removal, later elements shift left.
+- `Queue` is first-in, first-out (FIFO). `LinkedList` is one common implementation.
+- `poll()` returns `null` on an empty queue instead of throwing an exception.
+
+## Author
+
+Bhargav Sai Gundapaneni, Boston University# Java Collections Examples (ListExample)
+
+A small set of Java programs demonstrating basic collection operations, written for Boston University METCS622.
+
+## Project Structure
+
+```
+.
+└── ListExample/
+    ├── ArrayListExample.java
+    ├── QueueExample.java
+    └── GenericClass.java
+```
+
+## Requirements
+
+- Java JDK 8 or higher
+
+## Files
+
+### 1. `ArrayListExample.java`
+Demonstrates common `ArrayList<String>` operations:
+- Iterate and print all elements (enhanced for-loop)
+- Find the index of `"BU"`, `"METCS622"`, and `"test1"` with `indexOf()`
+- Check membership of `"test3"` with `contains()`
+- Remove `"foo"` and `"bar"` with `remove()`
+
+### 2. `QueueExample.java`
+Demonstrates the `Queue<String>` interface using a `LinkedList`:
+- Add `"x"`, `"y"`, `"z"` with `offer()`
+- Remove two elements from the head with `poll()` (FIFO order)
+- Print the queue before and after removal
+
+### 3. `GenericClass.java`
+An empty placeholder class with a default constructor. It has no `main` method and is not runnable on its own.
+
+## How to Compile and Run
+
+From the project root (the folder containing `ListExample/`):
+
+```bash
+javac ListExample/*.java
+
+java ListExample.ArrayListExample
+java ListExample.QueueExample
+```
+
+## Expected Output
+
+**ArrayListExample**
+```
+List contents:
+foo
+bar
+test1
+test2
+METCS622
+BU
+Boston University
+
+'BU' is found at position: 5
+
+'METCS622' is found at position: 4
+'test1' is found at position: 2
+
+'test3' is not present in the list.
+
+Updated list after removing 'foo' and 'bar':
+test1
+test2
+METCS622
+BU
+Boston University
+```
+
+**QueueExample**
+```
+Queue after adding elements: [x, y, z]
+Queue after removing two elements: [z]
+```
+
+## Key Concepts
+
+| Method | Class/Interface | Purpose |
+|---|---|---|
+| `add(E e)` | `ArrayList` | Append an element |
+| `indexOf(Object o)` | `ArrayList` | Index of first match, or `-1` if absent |
+| `contains(Object o)` | `ArrayList` | `true` if element exists |
+| `remove(Object o)` | `ArrayList` | Remove first matching element |
+| `offer(E e)` | `Queue` | Insert at the tail |
+| `poll()` | `Queue` | Remove and return the head (`null` if empty) |
+
+## Notes
+
+- `ArrayList` indexes start at **0**; after a removal, later elements shift left.
+- `Queue` is first-in, first-out (FIFO). `LinkedList` is one common implementation.
+- `poll()` returns `null` on an empty queue instead of throwing an exception.
 
 ## Author
 
